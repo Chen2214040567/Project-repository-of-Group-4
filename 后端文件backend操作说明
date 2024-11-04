@@ -22,7 +22,7 @@ JDK版本不兼容：com.sun.tools.javac.tree 包是 JDK 内部使用的 API，�
 用户设置文件设置为 apache-maven-3.9.9\conf\settings.xml
 
 如果还是不行：
-尝试将Maven 主路径 apache-maven-3.9.9 更改为 JavaEE黄忠南老师发的 apache-maven-3.6.1，
+尝试将Maven 主路径 apache-maven-3.9.9 更改为 JavaEE黄振桂老师发的 apache-maven-3.6.1，
 用户设置文件设置为 apache-maven-3.6.1\conf\settings.xml，
 本地仓库设置为 apache-maven-3.6.1\mvn_repo
 
