@@ -31,9 +31,7 @@ public class SecurityConfig {
 	private SecurityFilter securityFilter;
 	
 	@Bean
-	public AuthenticationManager authenticationManager(
-			AuthenticationConfiguration authConfig) 
-					throws Exception {
+	public AuthenticationManager authenticationManager( AuthenticationConfiguration authConfig) throws Exception {
 		return authConfig.getAuthenticationManager();
 	}
 	
@@ -48,7 +46,7 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain configure(HttpSecurity http) throws Exception {
 		http.csrf().disable()
-		.authorizeRequests().antMatchers("/user/save", "/user/login").permitAll()
+		.authorizeRequests().antMatchers("/api/user/save", "/api/user/login").permitAll()
 		.anyRequest().authenticated()
 		.and()
 		.exceptionHandling()
