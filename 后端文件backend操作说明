@@ -1,0 +1,63 @@
+一、运行成功 SpringBootRestSecurityJwtNewApplicati 
+
+1.使用 IDEA 打开老师发送的 PropertyInCase 》 backend 文件夹。
+
+2.打开后，可能耗费时间下载依赖项
+
+3.打开并运行 backend\src\main\java\com\app\raghu 文件夹下的 SpringBootRestSecurityJwtNewApplication 
+
+4.运行 SpringBootRestSecurityJwtNewApplication 后，可能会出现以下错误：
+java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field 'com.sun.tools.javac.tree.JCTree qualid'
+
+这个问题可能由以下原因引起：
+JDK版本不兼容：com.sun.tools.javac.tree 包是 JDK 内部使用的 API，它并不是 Java 官方 API 的一部分，因此它的结构和内容可能会随着 JDK 版本的变化而变化。如果你编译的代码是基于一个 JDK 版本，而运行时使用的是另一个版本，可能会遇到这种错误。
+
+解决方法：
+（1）通过 “File”->“Project Structure”->“Project” 来更改项目的JDK版本设置和语言级别（执行成功不一定需要固定JDK版本设置和语言级别）
+例如：更改SDK版本设置为：17，
+语言级别设置为：SDK默认值
+
+（2）通过 “文件” -> “构建、执行、部署” -> “构建工具” -> “Maven” 来更改项目依赖的 Maven 包和设置路径。
+例如：Maven 主路径更改为老师发送的 apache-maven-3.9.9，
+用户设置文件设置为 apache-maven-3.9.9\conf\settings.xml
+
+如果还是不行：
+尝试将Maven 主路径 apache-maven-3.9.9 更改为 JavaEE黄忠南老师发的 apache-maven-3.6.1，
+用户设置文件设置为 apache-maven-3.6.1\conf\settings.xml，
+本地仓库设置为 apache-maven-3.6.1\mvn_repo
+
+5.如果运行成功，结果会显示字符 " S P R I N G"
+
+
+
+
+
+二、创建数据表
+
+一般想要在 backend 项目里建立 dictionary_categories 和 dictionary_items 数据表。
+
+前提是项目里没有显示红色警告，
+且 SpringBootRestSecurityJwtNewApplication 运行没问题后。
+
+第1步：
+打开项目下方的 application.properties ，根据里面的接口 10.60.1.38 和端口3306，和用户名密码root，
+在右侧建立数据库和名为 incase 的架构
+
+第2步：
+根据原项目里的 controller 文件夹内的 UserRestController；
+entity 文件夹内三个 User 文件；
+以及下面一众与创建 User 数据表相关的文件，去编写相似的文件。
+编写完后，运行 SpringBootRestSecurityJwtNewApplication 没问题后。
+
+在右侧的数据库列表刷新，即可发现新创建的数据表。
+
+
+
+
+
+
+
+
+
+
+
